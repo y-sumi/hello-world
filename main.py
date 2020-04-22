@@ -14,10 +14,10 @@ from linebot.models import (
 )
 
 app = Flask(__name__)
------追加-----
+#-----追加-----
 # インスタンス生成
 res = Response()
----ここまで---
+#---ここまで---
 
 # Herokuの変数からトークンなどを取得
 channel_secret = os.environ['LINE_CHANNEL_SECRET']
