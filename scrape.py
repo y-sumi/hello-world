@@ -13,7 +13,7 @@ def getNews(word):
     html = urllib.request.urlopen(req)
     soup = BeautifulSoup(html, "html.parser")
     main = soup.find('div', attrs={'class': 'topicsMod'})
-    topics = main.select("li > a")
+    topics = main.select(" ")
 
     count = 0
     list = []
