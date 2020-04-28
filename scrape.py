@@ -25,7 +25,8 @@ def getNews(word):
     #        list.append(topic.get('href'))
     #        count += 1
     if count == 0:
-        list.append(word + "に関する記事が見つかりませんでした！！")
-
+        #list.append("「" + word + "」に関する記事が見つかりませんでした！！")
+        list.append(main)
+          
     result = '\n'.join(list)
     return result
