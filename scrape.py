@@ -14,7 +14,7 @@ def getNews(word):
     soup = BeautifulSoup(html, "html.parser")
     #main = soup.find('div', attrs={'class': 'topicsMod'})
     #topics = main.select("li > a")
-    topics = soup.select("li")
+    topics = soup.select("は")
 
     count = 0
     list = []
