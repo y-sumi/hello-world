@@ -19,6 +19,13 @@ def getNews(word):
     count = 0
     list = []
 
+     '''
+     for topic in topics:
+        if topic.contents[0].find(word) > -1:             
+            list.append(topic.contents[0])
+            list.append(topic.get('href'))
+            count += 1
+     '''
     for topic in topics:
         #if topic.contents[0].find(word) > -1:
         if word in topic.contents[0]:               
@@ -26,8 +33,8 @@ def getNews(word):
             list.append(topic.get('href'))
             count += 1
     if count == 0:
-        list.append("「" + word + "」に関する記事が見つかりませんでした！！")
-        #list.append(topics)
+        #list.append("「" + word + "」に関する記事が見つかりませんでした！！")
+        list.append(topic.contents[0])
           
     result = '\n'.join(list)
     return result
