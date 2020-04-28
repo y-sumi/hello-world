@@ -20,7 +20,8 @@ def getNews(word):
     list = []
 
     for topic in topics:
-        if topic.contents[0].find(word) > -1:
+        #if topic.contents[0].find(word) > -1:
+        if word in topic.contents[0]:               
             list.append(topic.contents[0])
             list.append(topic.get('href'))
             count += 1
