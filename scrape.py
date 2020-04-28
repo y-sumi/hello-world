@@ -16,7 +16,7 @@ def getNews(word):
     #topics = main.select("li > a")
 
     count = 0
-    #list = []
+    list = []
 
     #for topic in topics:
         #if topic.contents[0].find(word) > -1:
