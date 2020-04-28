@@ -12,21 +12,21 @@ def getNews(word):
     req = urllib.request.Request(url, headers={'User-Agent': ua})
     html = urllib.request.urlopen(req)
     soup = BeautifulSoup(html, "html.parser")
-    main = soup.find('div', attrs={'class': 'topicsMod'})
+    #main = soup.find('div', attrs={'class': 'topicsMod'})
     #topics = main.select("li > a")
-    topics = main
+    topics = soup.select("li")
 
     count = 0
     list = []
 
-    #for topic in topics:
-    #    if topic.contents[0].find(word) > -1:
-    #        list.append(topic.contents[0])
-    #        list.append(topic.get('href'))
-    #        count += 1
+    for topic in topics:
+        if topic.contents[0].find(word) > -1:
+            list.append(topic.contents[0])
+            list.append(topic.get('href'))
+            count += 1
     if count == 0:
-        #list.append("「" + word + "」に関する記事が見つかりませんでした！！")
-        list.append(main)
+        list.append("「" + word + "」に関する記事が見つかりませんでした！！")
+        #list.append(topics)
           
     result = '\n'.join(list)
     return result
