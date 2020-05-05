@@ -15,7 +15,7 @@ def getNews(word):
     #main = soup.find('div', attrs={'class': 'topicsMod'})
     #topics = main.select("li > a")
 
-    topics = soup.select("")
+    topics = soup.select("li > a")
 
     count = 0
     list = []
@@ -34,7 +34,6 @@ def getNews(word):
             count += 1
     if count == 0:
         list.append("「" + word + "」に関する記事が見つかりませんでした！！")
-        #list.append(topic.contents[0])
           
     result = '\n'.join(list)
     return result
